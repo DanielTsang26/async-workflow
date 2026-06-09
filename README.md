@@ -32,7 +32,7 @@ In a scaled enterprise environment, the heartbeat-and-lease pattern designed to 
 
 ### The MVP Execution Strategy
 
-While the distributed system outlined above represents the production design, a key requirement of early-stage infrastructure engineering is **maximizing execution velocity without compromising logical correctness**. 
+While the distributed system outlined above represents the production design, a key requirement of early-stage infrastructure engineering is maximizing execution velocity without compromising logical correctness. 
 
 For the 3-day challenge prototype, I made a conscious engineering decision to bypass the operational overhead of configuring separate database containers, network brokers, or third-party message queues on `localhost`. Instead, I engineered a fully self-contained, in-memory simulation script that isolates and demonstrates the exact math, logic, and state-machine behavior of the production recovery engine.
 
