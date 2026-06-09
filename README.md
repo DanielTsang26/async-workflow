@@ -1,6 +1,6 @@
 # Async Workflow 
 
-## 1. Fault Taxonomies: Mitigating Long-Running Pipeline Failures (The core problems)
+##Fault Taxonomies: Mitigating Long-Running Pipeline Failures (The core problems)
 
 To ensure enterprise-grade reliability and user trust, the architecture must defensively handle three primary failure modes common in asynchronous data pipelines:
 
