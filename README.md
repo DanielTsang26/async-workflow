@@ -80,9 +80,14 @@ If a job gets stuck too many times (breaching max_retries), the script realizes 
 
 ---
 
-### Tool Disclosure:
+### Tool Disclosure
+---
+Tools that were used was 
+Claude AI
+Github Copilot
+Python
+Python Libraries- Asyncio, Logging, and Time.
 
-Tools that were used was Claude AI, Github Copilot, Python, Python Libraries such as Asyncio, Logging, and Time.
 ---
 ### Future Iterations:
 
