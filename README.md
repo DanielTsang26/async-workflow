@@ -101,5 +101,46 @@ Advanced Anomaly Detection (Predictive Monitoring)
 **Phase 3:**
 * **Decoupled Redis Broker**
 * **Horizontal Line Scale**
+---
+
+### References:
+
+### 1. Request Lifecycle & Sync/Async Boundaries
+* **Asynchronous Request-Reply Pattern** (Microsoft Azure Architecture Center)
+  * *Context:* Grounding our sync/async HTTP boundaries and the enforcement of the `HTTP 202 Accepted` handshake thread-decoupling model.
+  * *Source:* [Azure Architecture Center — Asynchronous Request-Reply Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/asynchronous-request-reply)
+* **Background Jobs Best Practices** (Microsoft Azure Architecture Center)
+  * *Context:* Classifying background job taxonomies (CPU-intensive vs. I/O-intensive workloads) to protect web-tier performance.
+  * *Source:* [Azure Architecture Center — Background Jobs](https://learn.microsoft.com/en-us/azure/architecture/best-practices/background-jobs)
+
+### 2. Queue & Worker Architecture
+* **The Claim-Check Pattern** (Enterprise Integration Patterns / Microsoft Azure)
+  * *Context:* Utilizing a pass-by-reference message protocol (storing heavy clinical datasets in object storage and routing lightweight tracking tokens through the queue broker) to mitigate payload saturation.
+  * *Source:* [Azure Architecture Center — Claim-Check Pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/claim-check)
+  * *Source:* [Enterprise Integration Patterns — Claim Check](https://www.enterpriseintegrationpatterns.com/patterns/messaging/StoreInLibrary.html)
+* **Designing Robust API Idempotency Keys** (The Stripe Engineering Blog)
+  * *Context:* Benchmarking structural strategies for idempotent consumer processing, preventing duplicate workflow execution on network retries.
+  * *Source:* [Stripe Engineering Blog — Idempotency Keys](https://stripe.com/blog/idempotency)
+* **Distributed Locks with Redis** (Redis Core Documentation)
+  * *Context:* Designing atomic lock states (`SETNX` / Redlock patterns) to allow background worker instances to claim and isolate jobs safely.
+  * *Source:* [Redis Documentation — Distributed Locks](https://redis.io/docs/latest/develop/use/patterns/distributed-locks/)
+
+### 3. Scalability & Backpressure
+* **SaaS Tenant Isolation & Message Grouping Patterns** (AWS / Developer Community)
+  * *Source:* [AWS SQS Multi-Tenant Message Grouping Patterns (Hone Architecture)](https://honesw.com/blog/aws-sqs-fair-queues-for-multi-tenant-applications)
+* **Token Bucket Rate Limiting** (Stripe Engineering)
+  * *Context:* Implementing programmatic backpressure controls at the gateway tier to handle sudden ingestion spikes.
+  * *Source:* [Stripe Engineering Blog — Scaling an API Gateway](https://stripe.com/blog/rate-limiters)
+
+### 4. Observability, Fault Detection & User Trust
+* **The Heartbeat Pattern** (Martin Fowler / Arpit Bhayani)
+  * *Context:* Validating the architectural rationale behind our independent Liveness Monitor loop, sweeping state ledgers periodically to detect silent worker deaths or infrastructure stalls.
+  * *Source:* https://medium.com/@a.mousavi/understanding-the-heartbeat-pattern-in-distributed-systems-5d2264bbfda6
+* **Error Message Design & Usability Guidelines** (Nielsen Norman Group)
+  * *Context:* Guiding the translation of complex infrastructural failure logs into clear, actionable, domain-focused language to uphold user trust in regulated environments.
+  * *Source:* [Nielsen Norman Group — Error Message Guidelines](https://www.nngroup.com/articles/error-message-guidelines/)
+* **FDA Title 21 CFR Part 11 Electronic Records Guidelines** (FDA.gov)
+  * *Context:* Ensuring regulatory compliance by decoupling internal, unalterable technical audit trails from front-end user interfaces.
+  * *Source:* [FDA.gov — Code of Federal Regulations Part 11](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/part-11-electronic-records-electronic-signatures-scope-and-application)
 
 
