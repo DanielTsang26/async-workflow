@@ -78,3 +78,12 @@ The moment the monitor detects a stuck job, it automatically intervenes. It chan
 
 If a job gets stuck too many times (breaching max_retries), the script realizes the file itself might be corrupted and moves it to a FAILED state so it doesn't loop forever.
 
+---
+
+### Tool Disclosure:
+
+Tools that were used was Claude AI, Github Copilot, Python, Python Libraries such as Asyncio, Logging, and Time.
+---
+
+
+
