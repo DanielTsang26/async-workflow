@@ -84,6 +84,13 @@ If a job gets stuck too many times (breaching max_retries), the script realizes 
 
 Tools that were used was Claude AI, Github Copilot, Python, Python Libraries such as Asyncio, Logging, and Time.
 ---
+### Future Iterations:
 
+Database Persistence Layer
+Dedicated Distributed Message Broker (Decoupling Core Tasks)
+Advanced Anomaly Detection (Predictive Monitoring)
 
+PHASE 1 (Current) ---->      PHASE 2 (Short-Term) ---->   PHASE 3 (Production)
+ In-Memory Prototype        SQL Database Storage         Decoupled Redis Broker
+ Local Asyncio Loops        Docker Containerization      Horizontal Microservice
 
