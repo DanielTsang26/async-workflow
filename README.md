@@ -90,7 +90,16 @@ Database Persistence Layer
 Dedicated Distributed Message Broker (Decoupling Core Tasks)
 Advanced Anomaly Detection (Predictive Monitoring)
 
-PHASE 1 (Current) ---->      PHASE 2 (Short-Term) ---->   PHASE 3 (Production)
- In-Memory Prototype        SQL Database Storage         Decoupled Redis Broker
- Local Asyncio Loops        Docker Containerization      Horizontal Microservice
+**Phase 1:**
+* **In-Memory Prototype**
+* **Local Asyncio Loop**
+
+**Phase 2:**
+* **SQL Database Storage**
+* **Docker Containerization**
+
+**Phase 3:**
+* **Decoupled Redis Broker**
+* **Horizontal Line Scale**
+
 
