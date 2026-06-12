@@ -82,11 +82,7 @@ class JobLedger:
               f"{''*60}\n")
               
         logger.error(f"DLQ Eviction: Job {job_id} permanently quarantined.")
-
-
         
-
-
 
     def get_stuck_jobs(self, timeout_seconds: float) -> list:
         now = time.time()
