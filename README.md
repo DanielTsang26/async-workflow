@@ -18,6 +18,13 @@ Core concept MVP vs. Production Ready
 <img width="867" height="546" alt="image" src="https://github.com/user-attachments/assets/94311d6d-4322-4941-bb68-b04b4b2ea00f" />
 
 ---
+## Setup & Run
+
+To run this particular program, for this program is an up-to-date Python runtime to be installed on the machine. To run this program, simply enter the command while in the out directory:
+```
+python main.py
+```
+---
 ## Technical Blueprint: Prototype Architecture & Strategic Tradeoffs
 
 ### Production Architecture Design
@@ -28,6 +35,7 @@ In a scaled enterprise environment, the heartbeat-and-lease pattern designed to 
 * **Persistent Ledger (PostgreSQL):** Enforces rigid data integrity, strict database schemas, and immutable auditing records necessary for regulatory clinical environments.
 * **Message Broker & Cache (Redis):** Orchestrates background task distribution via Redis Lists/Streams, while simultaneously managing worker heartbeat timestamps utilizing native Key Expiration (TTL) policies.
 * **Decoupled Payload Storage (AWS S3):** Hosts large clinical data files (`.sas7bdat`, `.csv`, `.xlsx`). The message broker never carries raw data payloads—only lightweight URI pointers—preventing memory saturation.
+
 
 ---
 
